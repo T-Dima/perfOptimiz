@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <style type="text/css">
+        #block {width:100px; height:100px; border:1px solid #ccc;}
+    </style>
+
+    <meta charset="utf-8">
+    <title>Документ без названия</title>
+</head>
+<body onload="load()">
+<div id="block"></div>
+<script >
+
+    function all() {
+
+
+    function load() {
+        var pic = document.getElementById("block");
+        pic.innerHTML = "<img src='1.jpg'>"
+    }
+
+    function onloaded() {
+        var pic = document.getElementById("block");
+        pic.innerHTML = "<img src='2.jpg'>"
+
+    }
+        load();
+        setTimeout(onloaded, 1000);
+        
+    }
+all();
+
+
+</script>
+</body>
+</html>

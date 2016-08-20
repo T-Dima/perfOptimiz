@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+<div id="counter"></div>
+<script>
+
+function getTime() {
+    var now = new Date();
+    var result = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+    var b = now.getSeconds();
+    console.log(b);
+
+    return(result);
+
+}
+
+setInterval(function load() {
+    var n = localStorage.getItem('on_load_counter');
+
+    if (n === null) {
+        n = 0;
+    }
+
+    n++;
+
+    localStorage.setItem("on_load_counter", n);
+
+    document.getElementById('counter').innerHTML = n;
+    document.getElementById('example').innerHTML = getTime();
+
+}, 10000);
+
+console.log("Сейчас " + getTime());
+</script>
+</body>
+</html>
